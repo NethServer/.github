@@ -13,6 +13,7 @@
         {
             "customType": "regex",
             "fileMatch": [
+                "^test-module\\.sh$",
                 "^build-images?\\.sh$"
             ],
             "matchStrings": [
