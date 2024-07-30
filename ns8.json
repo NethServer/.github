@@ -16,8 +16,8 @@
                 "^build-images?\\.sh$"
             ],
             "matchStrings": [
-                "docker\\.io\/(?:library\/)?(?<depName>.+):(?<currentValue>[-0-9\\.a-z]+)",
-                "(?<depName>ghcr\\.io\/.+):(?<currentValue>[-0-9\\.a-z]+)"
+                "docker\\.io\\/(?:library\\/)?(?<depName>[-0-9a-z_\\/.]+):(?<currentValue>[-0-9a-zA-Z_.]+)",
+                "(?<depName>ghcr\\.io\\/[-0-9a-z_\\/.]+):(?<currentValue>[-0-9a-zA-Z_.]+)"
             ],
             "datasourceTemplate": "docker"
         }
