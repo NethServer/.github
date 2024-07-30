@@ -30,9 +30,5 @@
             ],
             "allowedVersions": "<=18"
         }
-    ],
-    "enabledManagers": [
-        "docker",
-        "regex"
     ]
 }
