@@ -13,8 +13,8 @@
         {
             "customType": "regex",
             "fileMatch": [
-                "^test-module\\.sh$",
-                "^build-images?\\.sh$"
+                "(^|/)test-module\\.sh$",
+                "(^|/)build-images?\\.sh$"
             ],
             "matchStrings": [
                 "docker\\.io\\/(?:library\\/)?(?<depName>[-0-9a-z_\\/.]+):(?<currentValue>[-0-9a-zA-Z_.]+)",
