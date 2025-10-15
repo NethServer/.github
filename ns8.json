@@ -6,9 +6,11 @@
     ],
     "branchPrefix": "renovate-",
     "branchNameStrict": true,
-    "ignorePaths": [
-        "**/ui/**"
-    ],
+    "vulnerabilityAlerts": {
+        "enabled": true,
+        "ignoreDeps": ["vue"]
+    },
+    "osvVulnerabilityAlerts": true,
     "customManagers": [
         {
             "customType": "regex",
@@ -26,9 +28,14 @@
     "packageRules": [
         {
             "matchPackageNames": [
-                "node"
+                "node",
+                "mcr.microsoft.com/devcontainers/javascript-node"
             ],
             "allowedVersions": "<=18"
+        },
+        {
+            "matchDatasources": ["npm"],
+            "enabled": false
         }
     ]
 }
