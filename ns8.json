@@ -1,7 +1,7 @@
 {
     "$schema": "https://docs.renovatebot.com/renovate-schema.json",
     "extends": [
-        "local>NethServer/.github:renovate-config",
+        "config:recommended",
         ":disableDependencyDashboard"
     ],
     "branchPrefix": "renovate-",
@@ -13,8 +13,36 @@
     "osvVulnerabilityAlerts": true,
     "customManagers": [
         {
+            "fileMatch": [
+                "(^|/)Containerfile$",
+                "(^|/)Dockerfile$"
+            ],
+            "matchStrings": [
+                "#\\s*renovate-debian:\\s*?(suite=(?<suite>.*?))?\\s*",
+                "(?:^|\\s)(?<depName>[a-z0-9][a-z0-9+._-]+?)=(?<currentValue>[0-9]+[^\\s]*?)(?:\\s|\\\\|$)"
+            ],
+            "datasourceTemplate": "deb",
+            "versioningTemplate": "deb",
+            "registryUrlTemplate": "https://deb.debian.org/debian?suite={{#if suite }}{{suite}}{{else}}stable{{/if}}&components=main,contrib,non-free&binaryArch=amd64"
+        },
+        {
+            "fileMatch": [
+                "(^|/)Containerfile$",
+                "(^|/)Dockerfile$"
+            ],
+            "matchStrings": [
+                "#\\s*renovate-ubuntu:\\s*?(suite=(?<suite>.*?))?\\s*",
+                "(?:^|\\s)(?<depName>[a-z0-9][a-z0-9+._-]+?)=(?<currentValue>[0-9]+[^\\s]*?)(?:\\s|\\\\|$)"
+            ],
+            "datasourceTemplate": "deb",
+            "versioningTemplate": "deb",
+            "registryUrlTemplate": "https://archive.ubuntu.com/ubuntu?suite={{#if suite }}{{suite}}{{else}}noble{{/if}}&components=main,universe,restricted,multiverse&binaryArch=amd64"
+        },
+        {
             "customType": "regex",
             "fileMatch": [
+                "(^|/)Containerfile$",
+                "(^|/)Dockerfile$",
                 "(^|/)test-module\\.sh$",
                 "(^|/)build-images?\\.sh$"
             ],
