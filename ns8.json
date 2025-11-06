@@ -13,6 +13,8 @@
     "osvVulnerabilityAlerts": true,
     "customManagers": [
         {
+            "groupName": "Debian/Ubuntu packages",
+            "groupSlug": "deb-update",
             "fileMatch": [
                 "(^|/)Containerfile$",
                 "(^|/)Dockerfile$"
@@ -27,6 +29,8 @@
             "registryUrlTemplate": "https://deb.debian.org/debian?suite={{#if suite }}{{suite}}{{else}}stable{{/if}}&components=main,contrib,non-free&binaryArch=amd64"
         },
         {
+            "groupName": "Debian/Ubuntu packages",
+            "groupSlug": "deb-update",
             "fileMatch": [
                 "(^|/)Containerfile$",
                 "(^|/)Dockerfile$"
@@ -55,6 +59,9 @@
             "datasourceTemplate": "docker"
         }
     ],
+    "minimumReleaseAge": "14 days",
+    "prCreation": "not-pending",
+    "internalChecksFilter": "strict",
     "packageRules": [
         {
             "matchPackageNames": [
