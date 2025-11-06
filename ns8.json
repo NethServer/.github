@@ -59,9 +59,6 @@
             "datasourceTemplate": "docker"
         }
     ],
-    "minimumReleaseAge": "14 days",
-    "prCreation": "not-pending",
-    "internalChecksFilter": "strict",
     "packageRules": [
         {
             "matchPackageNames": [
