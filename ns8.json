@@ -17,8 +17,9 @@
                 "(^|/)Containerfile$",
                 "(^|/)Dockerfile$"
             ],
+            "matchStringsStrategy": "recursive",
             "matchStrings": [
-                "#\\s*renovate-debian:\\s*?(suite=(?<suite>.*?))?\\s*",
+                "#\\s*renovate-debian:\\s*(suite=(?<suite>.*))?[\\s\\S]+",
                 "(?:^|\\s)(?<depName>[a-z0-9][a-z0-9+._-]+?)=(?<currentValue>[0-9]+[^\\s]*?)(?:\\s|\\\\|$)"
             ],
             "datasourceTemplate": "deb",
@@ -30,8 +31,9 @@
                 "(^|/)Containerfile$",
                 "(^|/)Dockerfile$"
             ],
+            "matchStringsStrategy": "recursive",
             "matchStrings": [
-                "#\\s*renovate-ubuntu:\\s*?(suite=(?<suite>.*?))?\\s*",
+                "#\\s*renovate-ubuntu:\\s*(suite=(?<suite>.*))?[\\s\\S]+",
                 "(?:^|\\s)(?<depName>[a-z0-9][a-z0-9+._-]+?)=(?<currentValue>[0-9]+[^\\s]*?)(?:\\s|\\\\|$)"
             ],
             "datasourceTemplate": "deb",
