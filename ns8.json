@@ -61,13 +61,6 @@
     ],
     "packageRules": [
         {
-            "matchDatasources": ["docker"],
-            "matchPackageNames": ["debian", "ubuntu"],
-            "groupName": "distro-images",
-            "versioning": "loose",
-            "pinDigests": true
-        },
-        {
             "matchPackageNames": [
                 "node",
                 "mcr.microsoft.com/devcontainers/javascript-node"
