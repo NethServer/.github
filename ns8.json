@@ -47,8 +47,6 @@
         {
             "customType": "regex",
             "fileMatch": [
-                "(^|/)Containerfile$",
-                "(^|/)Dockerfile$",
                 "(^|/)test-module\\.sh$",
                 "(^|/)build-images?\\.sh$"
             ],
