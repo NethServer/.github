@@ -59,15 +59,14 @@
     ],
     "packageRules": [
         {
-            "matchPackageNames": [
-                "node",
-                "mcr.microsoft.com/devcontainers/javascript-node"
-            ],
-            "allowedVersions": "<=18"
-        },
-        {
             "matchDatasources": ["npm"],
-            "enabled": false
+            "matchUpdateTypes": ["major"],
+            "enabled": false,
+            "description": "Disable major version upgrades for all npm packages"
         }
-    ]
+    ],
+    "lockFileMaintenance": {
+        "enabled": true,
+        "schedule": ["before 5am on the first day of the month"]
+    }
 }
