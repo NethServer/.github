@@ -1,8 +1,8 @@
 {
     "$schema": "https://docs.renovatebot.com/renovate-schema.json",
     "extends": [
-        "config:recommended",
-        ":disableDependencyDashboard"
+        "local>NethServer/.github:base",
+        ":maintainLockFilesMonthly"
     ],
     "branchPrefix": "renovate-",
     "branchNameStrict": true,
@@ -10,7 +10,6 @@
         "enabled": true,
         "ignoreDeps": ["vue"]
     },
-    "osvVulnerabilityAlerts": true,
     "customManagers": [
         {
             "groupName": "Debian/Ubuntu packages",
@@ -62,11 +61,7 @@
             "matchDatasources": ["npm"],
             "matchUpdateTypes": ["major"],
             "enabled": false,
-            "description": "Disable major version upgrades for all npm packages"
+            "description": "Disable major version upgrades for all npm packages. Useful to avoid Vue 2 to Vue 3 and Carbon upgrades."
         }
-    ],
-    "lockFileMaintenance": {
-        "enabled": true,
-        "schedule": ["before 5am on the first day of the month"]
-    }
+    ]
 }
