@@ -10,6 +10,16 @@
         "enabled": true,
         "ignoreDeps": ["vue"]
     },
+    "rebaseWhen": "never",
+    "keepUpdatedLabel": "auto-update",
+    "packageRules": [
+        {
+            "matchDatasources": ["npm"],
+            "matchUpdateTypes": ["major"],
+            "enabled": false,
+            "description": "Disable major version upgrades for all npm packages. Useful to avoid Vue 2 to Vue 3 and Carbon upgrades."
+        }
+    ],
     "customManagers": [
         {
             "groupName": "Debian/Ubuntu packages",
@@ -54,14 +64,6 @@
                 "(?<depName>(?:ghcr|quay)\\.io\\/[-0-9a-z_\\/.]+):(?<currentValue>[-0-9a-zA-Z_.]+)"
             ],
             "datasourceTemplate": "docker"
-        }
-    ],
-    "packageRules": [
-        {
-            "matchDatasources": ["npm"],
-            "matchUpdateTypes": ["major"],
-            "enabled": false,
-            "description": "Disable major version upgrades for all npm packages. Useful to avoid Vue 2 to Vue 3 and Carbon upgrades."
         }
     ]
 }
