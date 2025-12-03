@@ -33,7 +33,15 @@
             "matchDatasources": ["npm"],
             "matchUpdateTypes": ["major"],
             "enabled": false,
-            "description": "Disable major version upgrades for all npm packages. Useful to avoid Vue 2 to Vue 3 and Carbon upgrades."
+            "description": "Disable major version upgrades for all npm packages. Useful to avoid major updates of Vue ecosystem and Carbon."
+        },
+        {
+            "description": "Disable updates for Vue CLI monorepo packages to avoid node and @achrinza/node-ipc compatibility issues",
+            "matchPackagePatterns": [
+                "^@vue/cli-",
+                "@vue/cli"
+            ],
+            "enabled": false
         }
     ],
     "customManagers": [
