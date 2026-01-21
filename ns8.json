@@ -9,7 +9,7 @@
         "enabled": true,
         "ignoreDeps": ["vue"]
     },
-    "rebaseWhen": "automerge",
+    "rebaseWhen": "automerging",
     "keepUpdatedLabel": "auto-update",
     "packageRules": [
         {
