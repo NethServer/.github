@@ -41,13 +41,6 @@
                 "@vue/cli"
             ],
             "enabled": false
-        },
-        {
-            "description": "Disable updates for @carbon/icons-vue 10.129.0 and later, due to compatibility issues",
-            "matchPackageNames": [
-                "@carbon/icons-vue"
-            ],
-            "allowedVersions": "<10.129.0"
         }
     ],
     "customManagers": [
