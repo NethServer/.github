@@ -86,6 +86,17 @@
                 "(?<depName>(?:ghcr|quay)\\.io\\/[-0-9a-z_\\/.]+):(?<currentValue>[-0-9a-zA-Z_.]+)(@(?<currentDigest>sha256:[0-9a-f]+))?"
             ],
             "datasourceTemplate": "docker"
+        },
+        {
+            "customType": "regex",
+            "description": "Bump *_version/*_VERSION shell variables annotated with a `# renovate: datasource=... packageName=...` comment",
+            "fileMatch": [
+                "(^|/)build-images?\\.sh$"
+            ],
+            "matchStrings": [
+                "# renovate: datasource=(?<datasource>[a-z-]+?) packageName=(?<packageName>.+?)\\s*\\n\\s*\\w+_version=(?<currentValue>\\S+)",
+                "# renovate: datasource=(?<datasource>[a-z-]+?) packageName=(?<packageName>.+?)\\s*\\n\\s*\\w+_VERSION=(?<currentValue>\\S+)"
+            ]
         }
     ]
 }
