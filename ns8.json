@@ -1,7 +1,9 @@
 {
     "$schema": "https://docs.renovatebot.com/renovate-schema.json",
     "extends": [
-        "local>NethServer/.github:base"
+        "local>NethServer/.github:base",
+        "customManagers:dockerfileVersions",
+        "customManagers:githubActionsVersions"
     ],
     "branchPrefix": "renovate-",
     "branchNameStrict": true,
