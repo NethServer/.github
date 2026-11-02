@@ -43,6 +43,13 @@
                 "@vue/cli"
             ],
             "enabled": false
+        },
+        {
+            "description": "Automerge Corepack minor and patch updates: it is still 0.x, and CI builds the UI with the new version before merging",
+            "matchDatasources": ["npm"],
+            "matchPackageNames": ["corepack"],
+            "matchUpdateTypes": ["minor", "patch"],
+            "automerge": true
         }
     ],
     "customManagers": [
