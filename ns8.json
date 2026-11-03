@@ -1,9 +1,7 @@
 {
     "$schema": "https://docs.renovatebot.com/renovate-schema.json",
     "extends": [
-        "local>NethServer/.github:base",
-        "customManagers:dockerfileVersions",
-        "customManagers:githubActionsVersions"
+        "local>NethServer/.github:base"
     ],
     "branchPrefix": "renovate-",
     "branchNameStrict": true,
@@ -98,13 +96,17 @@
         },
         {
             "customType": "regex",
-            "description": "Bump *_version/*_VERSION shell variables annotated with a `# renovate: datasource=... packageName=...` comment",
+            "description": "Bump *_version/*_VERSION variables annotated with a `# renovate: datasource=... packageName=...` comment, in build-images.sh, the UI Containerfile (ARG) and the Renovate UI build workflow (env)",
             "fileMatch": [
-                "(^|/)build-images?\\.sh$"
+                "(^|/)build-images?\\.sh$",
+                "^ui/Containerfile$",
+                "^\\.github/workflows/test-ui-build-renovate\\.yml$"
             ],
             "matchStrings": [
                 "# renovate: datasource=(?<datasource>[a-z-]+?) packageName=(?<packageName>.+?)\\s*\\n\\s*\\w+_version=(?<currentValue>\\S+)",
-                "# renovate: datasource=(?<datasource>[a-z-]+?) packageName=(?<packageName>.+?)\\s*\\n\\s*\\w+_VERSION=(?<currentValue>\\S+)"
+                "# renovate: datasource=(?<datasource>[a-z-]+?) packageName=(?<packageName>.+?)\\s*\\n\\s*\\w+_VERSION=(?<currentValue>\\S+)",
+                "# renovate: datasource=(?<datasource>[a-z-]+?) packageName=(?<packageName>.+?)\\s*\\n\\s*ARG \\w+_VERSION=(?<currentValue>\\S+)",
+                "# renovate: datasource=(?<datasource>[a-z-]+?) packageName=(?<packageName>.+?)\\s*\\n\\s*\\w+_VERSION:\\s*(?<currentValue>\\S+)"
             ]
         }
     ]
