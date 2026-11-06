@@ -96,10 +96,11 @@
         },
         {
             "customType": "regex",
-            "description": "Bump *_version/*_VERSION variables annotated with a `# renovate: datasource=... packageName=...` comment, in build-images.sh, the UI Containerfile (ARG) and the Renovate UI build workflow (env)",
+            "description": "Bump *_version/*_VERSION variables annotated with a `# renovate: datasource=... packageName=...` comment, in build-images.sh, the Containerfiles that build the UI (ARG) and the Renovate UI build workflow (env)",
             "fileMatch": [
                 "(^|/)build-images?\\.sh$",
-                "^ui/Containerfile$",
+                "(^|/)ui/Containerfile$",
+                "^Containerfile$",
                 "^\\.github/workflows/test-ui-build-renovate\\.yml$"
             ],
             "matchStrings": [
